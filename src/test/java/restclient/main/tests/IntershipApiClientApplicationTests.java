@@ -15,7 +15,7 @@ class IntershipApiClientApplicationTests
 {
 	RestClientService service = new RestClientService();
 	
-	
+	@Test
 	void getMerchantsTest() 
 	{
 		List<Merchant> merchants = service.getAllMerchants();

@@ -1,5 +1,6 @@
 package restclient.main.services;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -13,10 +14,11 @@ import restclient.main.entites.dto.getMerchantResponseEntity;
 @Component
 public class RestClientService
 {
-	RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	RestTemplate restTemplate;
 
-    //@Value("${service.url}")
-    private final String url = "http://localhost:8787";
+    //@Value("${server.port}")
+    private String url = "http://localhost:8787";
      
 	public List<Merchant> getAllMerchants()
 	{	
